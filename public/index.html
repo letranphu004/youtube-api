@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kênh theo dõi</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect rx='6' width='24' height='24' fill='%23ff2d2d'/><path d='M9.5 7.5v9l7-4.5z' fill='white'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="brand">
+        <span class="logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.5 7.5v9l7-4.5z" fill="currentColor"/></svg></span>
+        <span>Kênh theo dõi</span>
+      </div>
+      <h1>Ai đang <span class="hl">live</span> lúc này?</h1>
+      <p class="sub" id="summary">Đang kiểm tra các kênh…</p>
+
+      <div class="toolbar">
+        <div class="seg" role="tablist" aria-label="Bộ lọc">
+          <button class="seg-btn is-active" data-filter="all" role="tab" aria-selected="true">Tất cả <span class="count" id="count-all">0</span></button>
+          <button class="seg-btn" data-filter="live" role="tab" aria-selected="false"><span class="dot"></span>Đang live <span class="count" id="count-live">0</span></button>
+        </div>
+        <div class="tags" id="tags"></div>
+        <label class="search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="q" type="search" placeholder="Tìm kênh…" autocomplete="off" />
+        </label>
+        <button class="refresh" id="refresh" title="Làm mới ngay">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 5v6h-6"/></svg>
+          <span id="countdown">—</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div id="error" class="error" hidden></div>
+    <section id="grid" class="grid" aria-live="polite"></section>
+    <p id="empty" class="empty" hidden>Không có kênh nào khớp bộ lọc.</p>
+  </main>
+
+  <footer class="wrap foot">
+    <span id="source"></span>
+    <span>Sửa danh sách kênh trong <code>config.js</code></span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

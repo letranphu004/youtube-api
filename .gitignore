@@ -1,0 +1,8 @@
+# Secrets (YouTube API key)
+.env
+
+node_modules/
+.DS_Store
+
+# Empty clone of the remote repo, not part of the source
+youtube-api/

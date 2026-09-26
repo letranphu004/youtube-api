@@ -1,0 +1,9 @@
+{
+  "name": "youtube-live-grid",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page showing followed YouTube channels in a grid, highlighting those currently live",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
